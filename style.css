@@ -1,0 +1,44 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+#users{
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    text-align: center;
+}
+.cartUser{
+    border: 1px gray solid;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(182, 228, 228);
+    width: 280px;
+    min-height: 200px;
+    word-wrap: break-word;
+    line-height: 150%;
+    border-radius: 10px;
+}
+#users>div:first-child{
+    background-color: burlywood;
+}
+.cartUser button{
+    height: 25px;
+    min-width: 80px;
+}
+#btngetuser{
+    height: 50px;
+    width: 250px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    background-color: rgb(211, 142, 130);
+    border: none;
+    border-radius: 10px;
+}
+#btngetuser:hover{
+    background-color: rgb(206, 113, 97);
+    cursor: pointer;
+}
