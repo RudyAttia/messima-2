@@ -60,7 +60,17 @@ function change20s(xhr) {
     }
     arrUsers[0] = newUser
     localStorage.setItem('users', JSON.stringify(arrUsers))
-    displayUsers()
+    // displayUsers()
+    document.querySelector('#users>div:first-child').innerHTML=`<div><img src='${newUser.picture}'></div>
+    <div>gender: ${newUser.gender}</div>
+    <div id='name0'>name: ${newUser.name}</div>
+    <div>Booking age: ${newUser.bookingAge}</div>
+    <div id='email0'>email: ${newUser.email}</div>
+    <br>
+    <div id='edit0'>
+        <button onclick='deleteUser(0)'>Del</button>
+        <button onclick="editUser(0,'${newUser.name}','${newUser.email}')">Edit</button>
+    </div>`
 }
 
 function getUser() {
@@ -104,9 +114,16 @@ function displayUsers() {
 }
 
 function deleteUser(index) {
-    arrUsers.splice(index, 1)
-    localStorage.setItem('users', JSON.stringify(arrUsers))
-    displayUsers()
+    if(index===0){
+        let url = "https://randomuser.me/api";
+        ajaxFetch('GET', url, change20s);
+    }
+    else{
+        arrUsers.splice(index, 1)
+        localStorage.setItem('users', JSON.stringify(arrUsers))
+        displayUsers()
+    }
+    
 }
 
 function editUser(index, name, email) {
